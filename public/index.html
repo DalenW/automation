@@ -52,6 +52,19 @@
         <input type="text" class="form-control trim" id="employee_id" placeholder="123456">
       </div>
 
+      <div class="mb-3">
+        <form class="d-flex" id="copy_form">
+          <div>
+            <label for="copy_input" class="form-label"></label>
+            <input type="text" class="form-control trim" id="copy_input" placeholder="">
+          </div>
+          <div class="ms-3">
+            <br>
+            <button type="submit" class="btn btn-primary" id="copy_button">Copy to Clipboard</button>
+          </div>
+        </form>
+
+      </div>
 
     </div>
 
@@ -64,13 +77,15 @@
           element.val(value.trim());
         });
 
-        $('#full_name').on('change', function() {
-          const element = $(this);
+        $('#copy_form').on('submit', function(e) {
+          e.preventDefault();
+
+          const element = $('#copy_input');
           const value = element.val();
 
           copyToClipboardAsync(value);
+          element.val('');
         });
-
 
       });
 
@@ -84,9 +99,6 @@
 
         return Promise.reject('The Clipboard API is not available.');
       };
-
-
     </script>
-
   </body>
 </html>
