@@ -34,17 +34,19 @@
         <input type="text" class="form-control trim" id="last_name" placeholder="Doe">
       </div>
 
+      <!-- phone -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control trim" id="phone" placeholder="123-456-7890">
+      </div>
+
+
       <!-- email -->
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control trim" id="email" placeholder="john.doe@example.com">
       </div>
 
-      <!-- phone -->
-      <div class="mb-3">
-        <label for="phone" class="form-label">Phone</label>
-        <input type="text" class="form-control trim" id="phone" placeholder="123-456-7890">
-      </div>
 
       <!-- Employee ID -->
       <div class="mb-3">
@@ -71,10 +73,14 @@
         </form>
       </div>
 
+      <div class="mb-3">
+        <button type="button" class="btn btn-warning" onclick="clearForm()">Clear Form</button>
+      </div>
+
     </div>
 
     <script>
-      const pestRoutesBranchs = [{"name":"Bloomfield","ID":37,"URL":"greenixpc37.pestroutes.com"},{"name":"Cherry Hill","ID":14,"URL":"greenixpc14.pestroutes.com"},{"name":"Chicago","ID":7,"URL":"greenixpc7.pestroutes.com"},{"name":"Cincinnati","ID":2,"URL":"greenixpc2.pestroutes.com"},{"name":"Cleveland","ID":4,"URL":"greenixpc4.pestroutes.com"},{"name":"Columbus","ID":19,"URL":"greenixpc19.pestroutes.com"},{"name":"Delaware","ID":35,"URL":"greenixpc35.pestroutes.com"},{"name":"Detroit","ID":8,"URL":"greenixpc8.pestroutes.com"},{"name":"For Wayne","ID":28,"URL":"greenixpc28.pestroutes.com"},{"name":"Grand Rapids","ID":10,"URL":"greenixpc10.pestroutes.com"},{"name":"Corporate","ID":24,"URL":"greenixpc24.pestroutes.com"},{"name":"Greenix Sales","ID":27,"URL":"greenixpc27.pestroutes.com"},{"name":"RIDD Sales","ID":26,"URL":"greenixpc26.pestroutes.com"},{"name":"The Grit Sales","ID":25,"URL":"greenixpc25.pestroutes.com"},{"name":"Hilliard","ID":1,"URL":"greenixpc1.pestroutes.com"},{"name":"Indianpolis","ID":5,"URL":"greenixpc5.pestroutes.com"},{"name":"Indianpolis Avon","ID":36,"URL":"greenixpc36.pestroutes.com"},{"name":"Louisville","ID":11,"URL":"greenixpc11.pestroutes.com"},{"name":"Munster","ID":22,"URL":"greenixpc22.pestroutes.com"},{"name":"Philadelphia","ID":9,"URL":"greenixpc9.pestroutes.com"},{"name":"Pittsburgh","ID":12,"URL":"greenixpc12.pestroutes.com"},{"name":"Princeton","ID":20,"URL":"greenixpc20.pestroutes.com"},{"name":"Rise Des Moines","ID":29,"URL":"greenixpc29.pestroutes.com"},{"name":"Rise Indianapolis","ID":30,"URL":"greenixpc30.pestroutes.com"},{"name":"Rise Kansas City","ID":31,"URL":"greenixpc31.pestroutes.com"},{"name":"Rise Milwaukee","ID":32,"URL":"greenixpc32.pestroutes.com"},{"name":"Rise Minneapolis","ID":33,"URL":"greenixpc33.pestroutes.com"},{"name":"Rise Omaha","ID":34,"URL":"greenixpc34.pestroutes.com"},{"name":"Salt Lake City","ID":6,"URL":"greenixpc6.pestroutes.com"},{"name":"Toledo","ID":21,"URL":"greenixpc21.pestroutes.com"},{"name":"Willow Grove","ID":23,"URL":"greenixpc23.pestroutes.com"}];
+      const pestRoutesBranchs = [{"name":"Bloomfield","ID":37,"URL":"greenixpc37.pestroutes.com"},{"name":"Cherry Hill","ID":14,"URL":"greenixpc14.pestroutes.com"},{"name":"Chicago","ID":7,"URL":"greenixpc7.pestroutes.com"},{"name":"Cincinnati","ID":2,"URL":"greenixpc2.pestroutes.com"},{"name":"Cleveland","ID":4,"URL":"greenixpc4.pestroutes.com"},{"name":"Columbus","ID":19,"URL":"greenixpc19.pestroutes.com"},{"name":"Delaware","ID":35,"URL":"greenixpc35.pestroutes.com"},{"name":"Detroit","ID":8,"URL":"greenixpc8.pestroutes.com"},{"name":"Fort Wayne","ID":28,"URL":"greenixpc28.pestroutes.com"},{"name":"Grand Rapids","ID":10,"URL":"greenixpc10.pestroutes.com"},{"name":"Corporate","ID":24,"URL":"greenixpc24.pestroutes.com"},{"name":"Greenix Sales","ID":27,"URL":"greenixpc27.pestroutes.com"},{"name":"RIDD Sales","ID":26,"URL":"greenixpc26.pestroutes.com"},{"name":"The Grit Sales","ID":25,"URL":"greenixpc25.pestroutes.com"},{"name":"Hilliard","ID":1,"URL":"greenixpc1.pestroutes.com"},{"name":"Indianpolis","ID":5,"URL":"greenixpc5.pestroutes.com"},{"name":"Indianpolis Avon","ID":36,"URL":"greenixpc36.pestroutes.com"},{"name":"Louisville","ID":11,"URL":"greenixpc11.pestroutes.com"},{"name":"Munster","ID":22,"URL":"greenixpc22.pestroutes.com"},{"name":"Philadelphia","ID":9,"URL":"greenixpc9.pestroutes.com"},{"name":"Pittsburgh","ID":12,"URL":"greenixpc12.pestroutes.com"},{"name":"Princeton","ID":20,"URL":"greenixpc20.pestroutes.com"},{"name":"Rise Des Moines","ID":29,"URL":"greenixpc29.pestroutes.com"},{"name":"Rise Indianapolis","ID":30,"URL":"greenixpc30.pestroutes.com"},{"name":"Rise Kansas City","ID":31,"URL":"greenixpc31.pestroutes.com"},{"name":"Rise Milwaukee","ID":32,"URL":"greenixpc32.pestroutes.com"},{"name":"Rise Minneapolis","ID":33,"URL":"greenixpc33.pestroutes.com"},{"name":"Rise Omaha","ID":34,"URL":"greenixpc34.pestroutes.com"},{"name":"Salt Lake City","ID":6,"URL":"greenixpc6.pestroutes.com"},{"name":"Toledo","ID":21,"URL":"greenixpc21.pestroutes.com"},{"name":"Willow Grove","ID":23,"URL":"greenixpc23.pestroutes.com"}];
       const branchSelectElement = $('#branch-select');
 
 
@@ -113,6 +119,12 @@
 
         return Promise.reject('The Clipboard API is not available.');
       };
+
+      function clearForm() {
+        $('input').each(function () {
+          $(this).val('');
+        })
+      }
     </script>
   </body>
 </html>
