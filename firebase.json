@@ -8,10 +8,6 @@
     ],
     "rewrites": [
       {
-        "source": "manifest.json",
-        "target": "manifest.json"
-      },
-      {
         "source": "**",
         "destination": "/index.html"
       }
