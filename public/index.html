@@ -85,6 +85,7 @@
         <label for="branch-select">PestRoutes Branch</label>
         <input type="hidden" id="branch_id_pr" />
         <input type="hidden" id="branch_id_uim" />
+        <input type="hidden" id="branch_name" />
         <select class="form-control" id="branch-select"></select>
       </div>
 
@@ -306,6 +307,7 @@
         const branchSelect = $("#branch-select");
         const branchIdPr = $("#branch_id_pr");
         const branchIdUim = $("#branch_id_uim");
+        const branchName = $("#branch_name");
 
         // update branch ids
         $("#branch-select").on("change", function (e) {
@@ -321,6 +323,7 @@
           // update the branch id fields
           branchIdPr.val(branch.pr_id);
           branchIdUim.val(branch.uim_id);
+          branchName.val(branch.name);
         });
       });
 
